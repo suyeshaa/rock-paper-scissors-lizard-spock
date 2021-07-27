@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock-Paper-Scissors-Lizard-Spock</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="main">
+      <div id="top">
+        <div class="left">
+          <img src="images/logo-bonus.svg" />
+        </div>
+        <div class="right">
+          <p class="score-txt">SCORE</p>
+          <span class="score">0</span>
+        </div>
+      </div>
+
+      <div id="rules">
+        <button class="rules-btn">RULES</button>
+      </div>
+
+      <div class="rules-modal">
+        <div class="modal-cont">
+          <div class="modal-top">
+            <span class="head">RULES</span>
+            <span class="close_btn">&times;</span>
+          </div>
+          <img src="images/image-rules-bonus.svg" />
+        </div>
+      </div>
+
+      <div id="major">
+        <div class="first-line">
+          <div class="options">
+            <div class="optn scis">
+              <img class="scissors" src="images/icon-scissors.svg" />
+            </div>
+          </div>
+        </div>
+        <div class="second-line">
+          <div class="options optn-sec">
+            <div class="optn spk">
+              <img class="spock" src="images/icon-spock.svg" />
+            </div>
+            <div class="optn pap">
+              <img class="paper" src="images/icon-paper.svg" />
+            </div>
+          </div>
+        </div>
+        <div class="third-line">
+          <div class="options optn-thr">
+            <div class="optn lz">
+              <img class="lizard" src="images/icon-lizard.svg" />
+            </div>
+            <div class="optn rck">
+              <img class="rock" src="images/icon-rock.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="page2">
+        <div class="player">
+          <div class="player-txt">YOU PICKED</div>
+          <div class="play"></div>
+
+          <!-- <div class="optn lz">
+            <img class="lizard" src="images/icon-lizard.svg" />
+          </div> -->
+        </div>
+        <div class="text-el">
+          <div class="heading">YOU LOSE</div>
+          <button class="btn">PLAY AGAIN</button>
+        </div>
+        <div class="computer">
+          <div class="comp-txt">THE HOUSE PICKED</div>
+          <div class="com"></div>
+          <!-- <div class="optn lz">
+            <img class="lizard" src="images/icon-lizard.svg" />
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
