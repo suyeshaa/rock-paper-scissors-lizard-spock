@@ -1,4 +1,17 @@
+// ==========================LOCAL-STORAGE=====================================
+function setStorage(num) {
+  localStorage.setItem("score", num);
+}
+
 // =============================UI================================
+
+let score = "";
+if (localStorage.getItem("score") != null) {
+  score = localStorage.getItem("score");
+} else {
+  score = 0;
+}
+
 $(".rules-btn").click(() => {
   $(".rules-modal").toggle();
 });
@@ -29,8 +42,7 @@ $(".optn").click(function () {
   $("#page2").css("display", "flex");
   let obj = this.cloneNode(true);
   $(".play").append(obj);
-  compChance();
-  compare();
+  setTimeout(compChance, 1000);
 });
 
 // ===========================COMPUTER======================
@@ -47,10 +59,12 @@ function compChance() {
 
   let optn = arr[idx].cloneNode(true);
   $(".com").append(optn);
+  compare();
 }
 
 // ======================COMPARISONS================================
-let score = document.querySelector(".score").textContent;
+
+document.querySelector(".score").textContent = score;
 console.log(score);
 
 function compare() {
@@ -117,13 +131,16 @@ function compare() {
 function playerWins() {
   $(".text-el").show();
   $(".heading").text("YOU WIN");
+  $(".player .optn").addClass("win");
   score++;
+  setStorage(score);
   $(".score").text(score);
 }
 
 function playerLose() {
   $(".text-el").show();
   $(".heading").text("YOU LOSE");
+  $(".computer .optn").addClass("win");
 }
 
 function drawMatch() {
@@ -137,4 +154,6 @@ $(".btn").click(() => {
   $("#page2").css("display", "none");
   $(".com").html("");
   $("#major").show();
+  $(".optn").removeClass("win");
+  $(".text-el").hide();
 });

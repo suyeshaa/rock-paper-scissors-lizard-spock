@@ -6,11 +6,17 @@
   /* overflow: hidden; */
 }
 
+body {
+  overflow: hidden;
+  background: linear-gradient(hsl(237, 49%, 15%), hsl(214, 47%, 23%));
+}
+
 #main {
   background: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
   height: 100vh;
   width: 100vw;
-  padding: 20px;
+  padding-top: 15px;
+  background-repeat: repeat;
 }
 
 #top {
@@ -37,6 +43,7 @@
   align-items: center;
   font-weight: 600;
   color: hsl(229, 64%, 46%);
+  z-index: 100;
 }
 
 .score {
@@ -194,6 +201,7 @@
   flex-direction: column;
   align-items: center;
   display: none;
+  z-index: 90;
 }
 
 .heading {
@@ -210,6 +218,7 @@
   border-radius: 6px;
   color: hsl(229, 25%, 31%);
   font-weight: 600;
+  margin-left: 17px;
 }
 
 .player {
@@ -224,7 +233,13 @@
   width: 200px !important;
   height: 200px !important;
   border-radius: 60%;
-  border: double 17px transparent;
+  border: double 20px transparent;
+}
+
+.win {
+  box-shadow: 0 0 0 40px hsla(0, 0%, 80%, 0.048),
+    0 0 0px 90px hsla(0, 0%, 50%, 0.055),
+    0 0 0px 150px hsla(228, 25%, 31%, 0.171);
 }
 
 .player,
@@ -240,4 +255,192 @@
   color: #fff;
   font-weight: 600;
   font-size: 23px;
+}
+
+/* .media {
+  display: none !important;
+} */
+
+@media (max-width: 910px) {
+  #top {
+    width: 60%;
+  }
+  .player .optn,
+  .computer .optn {
+    height: 180px !important;
+    width: 180px !important;
+  }
+
+  .player {
+    margin-right: 10px;
+  }
+  .computer {
+    margin-left: 10px;
+  }
+  .win {
+    box-shadow: 0 0 0 30px hsla(0, 0%, 80%, 0.048),
+      0 0 0px 60px hsla(0, 0%, 50%, 0.055),
+      0 0 0px 110px hsla(228, 25%, 31%, 0.171);
+  }
+
+  #major {
+    background-size: 300px 284px;
+  }
+  .options {
+    margin-top: 20px;
+  }
+
+  #rules button {
+    padding: 7px 27px;
+    font-size: 15px;
+  }
+  #rules {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .text-el {
+    margin-top: 100px !important;
+  }
+}
+
+@media (max-width: 750px) {
+  #top {
+    width: 70%;
+  }
+  .player .optn,
+  .computer .optn {
+    height: 160px !important;
+    width: 160px !important;
+  }
+
+  .player {
+    margin-right: 5px;
+  }
+  .computer {
+    margin-left: 5px;
+  }
+  .win {
+    box-shadow: 0 0 0 30px hsla(0, 0%, 80%, 0.048),
+      0 0 0px 60px hsla(0, 0%, 50%, 0.055),
+      0 0 0px 100px hsla(228, 25%, 31%, 0.171);
+
+    z-index: -10;
+  }
+
+  .text-el {
+    margin-top: 50px !important;
+  }
+}
+
+@media (max-width: 650px) {
+  #top {
+    width: 80%;
+  }
+  .no-media {
+    order: 3;
+    margin-top: 15px;
+  }
+  .player {
+    margin-right: 30px;
+    flex-direction: column-reverse;
+  }
+  .computer {
+    margin-left: 30px;
+    flex-direction: column-reverse;
+  }
+  #page2 {
+    margin-top: 60px;
+    flex-wrap: wrap;
+  }
+
+  .player-txt,
+  .comp-txt {
+    z-index: 10;
+    font-size: 20px;
+  }
+  body {
+    overflow-y: auto;
+  }
+
+  .text-el {
+    margin: 0 57px;
+    margin-bottom: 40px;
+  }
+
+  .btn {
+    transform: none;
+  }
+
+  .rules-btn p {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+  #rules button {
+    padding: 3px;
+    border-radius: 3px;
+  }
+  #rules {
+    bottom: 8px;
+    right: 8px;
+  }
+  .win {
+    box-shadow: 0 0 0 20px hsla(0, 0%, 80%, 0.048),
+      0 0 0px 50px hsla(0, 0%, 50%, 0.055),
+      0 0 0px 80px hsla(228, 25%, 31%, 0.171);
+  }
+  .modal-cont img {
+    width: 90%;
+    margin-left: 10px;
+  }
+  .modal-cont {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  #top {
+    width: 90%;
+  }
+  .player .optn,
+  .computer .optn {
+    height: 130px !important;
+    width: 130px !important;
+  }
+  .right {
+    width: 30%;
+  }
+}
+
+@media (max-width: 435px) {
+  #top {
+    width: 95%;
+  }
+  .player .optn,
+  .computer .optn {
+    height: 110px !important;
+    width: 110px !important;
+    border: double 15px transparent;
+  }
+
+  .optn {
+    height: 90px !important;
+    width: 90px !important;
+    border: double 10px transparent;
+  }
+  .second-line {
+    width: 320px;
+    transform: translateY(-5px);
+  }
+
+  .optn-sec {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .third-line {
+    width: 260px;
+    transform: translateY(30px);
+    /* transform: translateY(10px); */
+  }
 }
